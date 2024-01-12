@@ -144,7 +144,7 @@ public class RockTheVote : BasePlugin
 
         var countPlayers = _usersArray.Count(user => user != null);
         var countVote = (int)(countPlayers * _config.Needed) == 0 ? 1 : countPlayers * _config.Needed;
-        var user = _usersArray[player.EntityIndex!.Value.Value]!;
+        var user = _usersArray[player.Index]!;
         if (user.VotedRtv)
         {
             PrintToChat(player, "You have already voted to change the map");
@@ -195,7 +195,7 @@ public class RockTheVote : BasePlugin
             return;
         }
 
-        var user = _usersArray[player.EntityIndex!.Value.Value];
+        var user = _usersArray[player.Index];
         if (!string.IsNullOrEmpty(user!.ProposedMaps))
         {
             var buffer = user.ProposedMaps;
@@ -418,8 +418,8 @@ public class RockTheVote : BasePlugin
         var playerEntities = Utilities.FindAllEntitiesByDesignerName<CCSPlayerController>("cs_player_controller");
         foreach (var player in playerEntities)
         {
-            _usersArray[player.EntityIndex!.Value.Value].VotedRtv = false;
-            _usersArray[player.EntityIndex!.Value.Value].ProposedMaps = null;
+            _usersArray[player.Index]!.VotedRtv = false;
+            _usersArray[player.Index]!.ProposedMaps = null;
         }
 
         for (var i = 0; i < _proposedMaps.Length; i++)
