@@ -4,7 +4,7 @@ This plugin allows you to change map, nominate map, rtv
 # Fork
 This fork contains:
 * Some minor fixes to be more compatible with the latest versions of CSSharp
-* A fix for the error 'CSSharp: Native XXXXX was invoked on a non-main thread'https://github.com/Shlimmst/LiteMapChooser/blob/main/README.md
+* A fix for the error 'CSSharp: Native XXXXX was invoked on a non-main'
 * A new config variable "MapChangeDelayInSeconds"
 
 If there are any problems, make an issue. Since this is not my main focus I will try to get back to them.
