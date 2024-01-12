@@ -111,7 +111,7 @@ public class RockTheVote : BasePlugin
     private HookResult EventRoundEnd(EventRoundEnd @event, GameEventInfo info)
     {
         _countRounds++;
-        var maxrounds = ConVar.Find("mp_maxrounds").GetPrimitiveValue<int>();
+        var maxrounds = ConVar.Find("mp_maxrounds")!.GetPrimitiveValue<int>();
         if (_countRounds == (maxrounds - _config.VotingRoundInterval))
         {
             VoteMap(false);
@@ -323,7 +323,7 @@ public class RockTheVote : BasePlugin
         {
             if (IsTimeLimit)
             {
-                AddTimer(_config.VotingTimeInterval * 60.0f, () =>
+                AddTimer(_config.MapChangeDelayInSeconds, () =>
                 {
                     Server.ExecuteCommand(IsWsMaps(_selectedMap)
                         ? $"ds_workshop_changelevel {_selectedMap}"
@@ -340,7 +340,7 @@ public class RockTheVote : BasePlugin
         if (forced)
         {
             PrintToChatAll($"During the voting process, the {_selectedMap} map was selected");
-            Task.Delay(TimeSpan.FromSeconds(5)).ContinueWith(_ =>
+            AddTimer(_config.MapChangeDelayInSeconds, () =>
             {
                 Server.ExecuteCommand(IsWsMaps(_selectedMap)
                     ? $"ds_workshop_changelevel {_selectedMap}"
@@ -351,7 +351,7 @@ public class RockTheVote : BasePlugin
 
         PrintToChatAll($"During the voting process, the {_selectedMap} map was selected");
         if (!IsTimeLimit) return;
-        AddTimer(_config.VotingTimeInterval * 60.0f, () =>
+        AddTimer(_config.MapChangeDelayInSeconds, () =>
         {
             Server.ExecuteCommand(IsWsMaps(_selectedMap)
                 ? $"ds_workshop_changelevel {_selectedMap}"
@@ -397,6 +397,7 @@ public class RockTheVote : BasePlugin
             VotingRoundInterval = 5,
             VotingTimeInterval = 10,
             RoundsBeforeNomination = 6,
+            MapChangeDelayInSeconds = 30,
         };
 
         File.WriteAllText(configPath,
@@ -435,6 +436,7 @@ public class Config
     public float VotingTimeInterval { get; set; }
     public int VotingRoundInterval { get; set; }
     public double Needed { get; set; }
+    public int MapChangeDelayInSeconds { get; set; }
 }
 
 public class Users
