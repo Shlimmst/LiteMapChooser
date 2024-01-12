@@ -2,8 +2,10 @@
 This plugin allows you to change map, nominate map, rtv
 
 # Fork
-* This fork has some minor fixes to be more compatible with the latest versions of CSSharp
-* This fork contains a fix for the error 'CSSharp: Native XXXXX was invoked on a non-main thread'
+This fork contains:
+* Some minor fixes to be more compatible with the latest versions of CSSharp
+* A fix for the error 'CSSharp: Native XXXXX was invoked on a non-main thread'
+* A new config variable "MapChangeDelayInSeconds"
 
 If there are any problems, make an issue. Since this is not my main focus I will try to get back to them.
 
@@ -21,7 +23,8 @@ The config is created automatically in the same place where the dll is located
   "RoundsBeforeNomination": 6,	//After how many rounds is given the opportunity to nominate a map
   "VotingRoundInterval": 5,	//How many rounds after which to start voting on a completed map
   "VotingTimeInterval": 10.0, //How long to start voting on a completed map (in minutes)
-  "Needed": 0.6 //Percentage of players needed to rockthevote
+  "Needed": 0.6, //Percentage of players needed to rockthevote
+  "MapChangeDelayInSeconds": 30 //Amount of seconds between the map being chosen and the actual map change
 }
 ```
 for maps from the workshop, add the prefix "ws:" to maps.txt
