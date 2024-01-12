@@ -1,8 +1,6 @@
 # LiteMapChooser
 This plugin allows you to change map, nominate map, rtv
 
-* This fork has some minor fixes to be more compatible with the latest versions of CSSharp (CounterStrikeSharp)
-
 # Installation
 1. Install [CounterStrike Sharp](https://github.com/roflmuffin/CounterStrikeSharp) and [Metamod:Source](https://www.sourcemm.net/downloads.php/?branch=master)
 
