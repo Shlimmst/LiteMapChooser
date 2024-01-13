@@ -7,8 +7,6 @@ This fork contains:
 * A fix for the error 'CSSharp: Native XXXXX was invoked on a non-main'
 * A new config variable "MapChangeDelayInSeconds"
 
-If there are any problems, make an issue. Since this is not my main focus I will try to get back to them.
-
 **NOTE: this has been tested on gamemodes without rounds (e.g. Surf)**
 
 # Installation
