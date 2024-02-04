@@ -1,50 +1,21 @@
 # LiteMapChooser
 This plugin allows you to change map, nominate map, rtv
 
-# Fork
-This fork contains:
-* Some minor fixes to be more compatible with the latest versions of CSSharp
-* A fix for the error 'CSSharp: Native XXXXX was invoked on a non-main'
-* A new config variable "MapChangeDelayInSeconds"
+# This plugin does NOT work with newer versions of CSSharp.
+Even after the changes done to the code, this plugin is too out of date with new versions of CSSharp and does not work. Due to the many changes needed it is not worth fixing it.
 
-**NOTE: this has been tested on gamemodes without rounds (e.g. Surf)**
+Take a look at [this](https://github.com/abnerfs/cs2-rockthevote) maintained branch instead with even more features.
+
+
+
+
+
 
 # Installation
-1. Install [CounterStrike Sharp](https://github.com/roflmuffin/CounterStrikeSharp) and [Metamod:Source](https://www.sourcemm.net/downloads.php/?branch=master)
-
-2. Download LiteMapChooser
-
-3. Unzip the archive and upload it to the game server
+/
 
 # Configs
-The config is created automatically in the same place where the dll is located
-```
-{
-  "RoundsBeforeNomination": 6,	//After how many rounds is given the opportunity to nominate a map
-  "VotingRoundInterval": 5,	//How many rounds after which to start voting on a completed map
-  "VotingTimeInterval": 10.0, //How long to start voting on a completed map (in minutes)
-  "Needed": 0.6, //Percentage of players needed to rockthevote
-  "MapChangeDelayInSeconds": 30 //Amount of seconds between the map being chosen and the actual map change
-}
-```
-for maps from the workshop, add the prefix "ws:" to maps.txt
-```
-cs_italy
-cs_office
-de_dust2
-de_inferno
-de_mirage
-de_nuke
-de_overpass
-de_vertigo
-ws:surf_beginner
-ws:surf_void
-ws:surf_utopia_njv
-ws:surf_ace
-ws:surf_kitsune_cs2
-```
+/
 
 # Commands
-**ccs_rtv**,**!rtv** - starts the map change process
-
-**css_nominate**,**!nominate** - opens the map menu
+/
